@@ -67,11 +67,9 @@ class ConfigMapper(object):
 
 
 	def stored_config(self):
-		"""Access the DB directly for pay-as-you-go configuration needs
-		You get an empty dict but with access to any keys when requested
-		"""
+		"""Returns the full stored configuration values as a dictionary"""
 		db = dbdict(self.path)
-		return db
+		return db.get_all()
 
 
 	def integrity_check(self):
